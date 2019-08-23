@@ -9,7 +9,7 @@ Grap the source
 If you would like to download the original images, you should signup [ImageNet](http://www.image-net.org/)
 
 ### Usage - Download images:
-Get the urls of wnid and download all of them. E.g., download [Dog images from ImageNet](http://www.image-net.org/synset?wnid=n02084071) and save images to ./n02084071/url_images/*.jpg
+Get the urls of wnid and download all of them. E.g., download [Dog images from ImageNet](http://www.image-net.org/synset?wnid=n02084071) and save images to ./n02084071/url_images/*.JPEG
 
 `$ ./downloadutils.py --downloadImages --wnid n02084071`
 
