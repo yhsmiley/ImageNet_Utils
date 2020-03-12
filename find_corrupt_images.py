@@ -1,7 +1,7 @@
 import os
 from PIL import Image
     
-wnid = 'n04045255'
+wnid = 'n03082979'
 image_dir = './downloaded_images/{}/{}_urlimages'.format(wnid, wnid)
 
 for filename in os.listdir(image_dir):

@@ -18,7 +18,7 @@ class ImageNetDownloader:
     def download_file(self, url, desc=None, renamed_file=None, replace_if_exists=False):
         # headers = {'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'}
         # u = requests.get(url, headers=headers)
-        resp = requests.get(url)
+        resp = requests.get(url, timeout=5)
 
         scheme, netloc, path, query, fragment = urlparse.urlsplit(url)
         filename = os.path.basename(path)
@@ -89,7 +89,7 @@ class ImageNetDownloader:
         url = 'http://www.image-net.org/api/text/imagenet.synset.geturls.getmapping?wnid=' + str(wnid)
         # headers = {'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'}
         # f = requests.get(url, headers=headers)
-        f = requests.get(url)
+        f = requests.get(url, timeout=5)
         contents = f.content.decode('utf-8').split('\n')
         imageUrlsMapping = []
 

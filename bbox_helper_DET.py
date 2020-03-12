@@ -33,7 +33,8 @@ class BBoxHelper:
         self.rects = []
         for object_iter in objects:
                 bndbox = object_iter.find("bndbox")
-                self.rects.append([int(it.text) for it in bndbox])
+                # self.rects.append([int(it.text) for it in bndbox])
+                self.rects.append([int(bndbox[0].text), int(bndbox[2].text), int(bndbox[1].text), int(bndbox[3].text)])
 
         localPath = xmltree.find('path')
 
@@ -82,7 +83,7 @@ class BBoxHelper:
         def getWnid(self):
             return self.wnid
 
-    def findImagePath(self, search_folder='./downloaded_images'):
+    def findImagePath(self, search_folder='./downloaded_images/DET'):
         filename = self.annotation_filename + str('.JPEG')
         for root, dirs, files in os.walk(search_folder):
             for file in files:
